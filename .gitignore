@@ -87,3 +87,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# .eslintrc.js + package.json
+.eslintrc.js
+package.json
