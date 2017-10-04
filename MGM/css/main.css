@@ -67,10 +67,7 @@ header > img {
   margin-left:30px;
 }
 
-.openb {
-  float: right;
-  margin: 20px;
-}
+/* Modal overlay */
 
 .login-modal-overlay {
   position: fixed;
@@ -79,6 +76,9 @@ header > img {
   background: rgba(0, 0, 0, 0.5);
   display: none;
 }
+
+
+/* modal */
 
 .login-modal {
   background: #fff;
@@ -95,6 +95,9 @@ header > img {
   border-radius: 2px;
   padding: 30px;
 }
+
+
+/* general styles */
 
 .login-modal h1 {
   padding-top: 0;
@@ -115,9 +118,16 @@ header > img {
   padding-bottom: 30px;
 }
 
+
+/* form & imputs */
+
 .login-modal .group { 
 	position: relative; 
-	margin-bottom: 45px; 
+  margin-bottom: 35px; 
+}
+.transparent-container{
+  background-color:rgba(255, 255, 255, 0.2);
+  display: none;
 }
 
 .login-modal input {
@@ -137,6 +147,9 @@ header > img {
   outline: none;
 }
 
+
+/* Label */
+
 .login-modal label {
 	color: #999; 
 	font-size: 18px;
@@ -148,6 +161,9 @@ header > img {
 	transition: all 0.2s ease;
 }
 
+
+/* active */
+
 .login-modal input:focus ~ label,
 .login-modal input.used ~ label {
 	top: -20px;
@@ -155,6 +171,9 @@ header > img {
   left: -4px;
 	color: #00A0E3;
 }
+
+
+/* Underline */
 
 .login-modal .bar {
 	position: relative;
@@ -185,10 +204,16 @@ header > img {
   right: 50%;
 }
 
+
+/* active */
+
 .login-modal input:focus ~ .bar:before,
 .login-modal input:focus ~ .bar:after {
   width: 50%;
 }
+
+
+/* Button */
 
 .button {
   position: relative;
@@ -224,52 +249,12 @@ header > img {
     box-shadow: inset 0 -2px 0 rgba(0,0,0,0.27);
 }
 
+
+/* Button modifiers */
+
 .buttonBlue {
   background: #00A0E3;
   text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
 }
 
 .buttonBlue:hover { background: #0092D0; }
-
-/* .ripples {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: transparent;
-} */
-
-/* .ripplesCircle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-} */
-
-/* .ripples.is-active .ripplesCircle {
-  animation: ripples .4s ease-in;
-} */
-
-
-/* @keyframes ripples {
-  0% { opacity: 0; }
-
-  25% { opacity: 1; }
-
-  100% {
-    width: 200%;
-    padding-bottom: 200%;
-    opacity: 0;
-  }
-} */

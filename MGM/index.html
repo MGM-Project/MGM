@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/main.css" rel="stylesheet"/>
-    <title>MGM-Project</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>TitleLess</title>
 </head>
 <body>
     <header>
@@ -13,25 +12,32 @@
     </header>
 <main>
     <div id="login">
-            <div class="login-modal-overlay">
-                <div class="login-modal">
-                      <h2>Please enter your name below.</h2>
-                        <div class="group">
-                          <input type="text" required></span><span class="bar"></span>
-                          <label>Player name</label>
-                        </div>
-                        <button class="button buttonBlue">Enter</button>
-                  </div>
+        <div class="login-modal-overlay">
+            <div class="login-modal">
+                <!-- <h1>Enter</h1> -->
+                <h2>Please enter your name below.</h2>
+                <div class="group">
+                  <input type="text" required><span class="bar"></span>
+                  <label>Player name</label>
+                </div>
+                <button class="button buttonBlue nameButton">Enter</button>
+            </div>
+        </div>
     </div>
-
     <div id="modalHelpWindow">
 
     </div>
-
     <div id="depositWindow">
-
+        <div class="login-modal transparent-container">
+            <!-- <h1>Enter</h1> -->
+            <h2>Choose sum to deposit in $</h2>
+            <div class="group">
+              <input type="number" required><span class="bar"></span>
+              <label>Player name</label>
+            </div>
+            <button class="button buttonBlue depositButton">Deposit</button>
+        </div>
     </div>
-
     <div id="gameWindow">
 
     </div>
@@ -39,6 +45,7 @@
 <footer>
     <div id="copyrightText">&#169; MGM 2017</div>
 </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
