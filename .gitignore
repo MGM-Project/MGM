@@ -88,6 +88,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# .eslintrc.js + package.json
-.eslintrc.js
+# .eslintrc.json + package.json
+.eslintrc.json
 package.json
