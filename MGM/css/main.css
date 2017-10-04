@@ -27,7 +27,7 @@ header{
   height: 50px;
 }
 main {
-    background-image: url("../Images/background.jpg");
+    background-image: url("../../Assets/Images/background.jpg");
     background-size:cover;
     background-repeat: no-repeat;
     flex: 1;
@@ -67,15 +67,10 @@ header > img {
   margin-left:30px;
 }
 
-/* open modal */
-
 .openb {
   float: right;
   margin: 20px;
 }
-
-
-/* Modal overlay */
 
 .login-modal-overlay {
   position: fixed;
@@ -84,9 +79,6 @@ header > img {
   background: rgba(0, 0, 0, 0.5);
   display: none;
 }
-
-
-/* modal */
 
 .login-modal {
   background: #fff;
@@ -103,9 +95,6 @@ header > img {
   border-radius: 2px;
   padding: 30px;
 }
-
-
-/* general styles */
 
 .login-modal h1 {
   padding-top: 0;
@@ -125,9 +114,6 @@ header > img {
   hyphens: auto;
   padding-bottom: 30px;
 }
-
-
-/* form & imputs */
 
 .login-modal .group { 
 	position: relative; 
@@ -151,9 +137,6 @@ header > img {
   outline: none;
 }
 
-
-/* Label */
-
 .login-modal label {
 	color: #999; 
 	font-size: 18px;
@@ -165,9 +148,6 @@ header > img {
 	transition: all 0.2s ease;
 }
 
-
-/* active */
-
 .login-modal input:focus ~ label,
 .login-modal input.used ~ label {
 	top: -20px;
@@ -175,9 +155,6 @@ header > img {
   left: -4px;
 	color: #00A0E3;
 }
-
-
-/* Underline */
 
 .login-modal .bar {
 	position: relative;
@@ -208,16 +185,10 @@ header > img {
   right: 50%;
 }
 
-
-/* active */
-
 .login-modal input:focus ~ .bar:before,
 .login-modal input:focus ~ .bar:after {
   width: 50%;
 }
-
-
-/* Button */
 
 .button {
   position: relative;
@@ -253,18 +224,12 @@ header > img {
     box-shadow: inset 0 -2px 0 rgba(0,0,0,0.27);
 }
 
-
-/* Button modifiers */
-
 .buttonBlue {
   background: #00A0E3;
   text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
 }
 
 .buttonBlue:hover { background: #0092D0; }
-
-
-/* Ripples container */
 
 /* .ripples {
   position: absolute;
@@ -275,9 +240,6 @@ header > img {
   overflow: hidden;
   background: transparent;
 } */
-
-
-/* Ripples circle */
 
 /* .ripplesCircle {
   position: absolute;
@@ -294,13 +256,11 @@ header > img {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
 } */
-/* 
-.ripples.is-active .ripplesCircle {
+
+/* .ripples.is-active .ripplesCircle {
   animation: ripples .4s ease-in;
 } */
 
-
-/* Ripples animation */
 
 /* @keyframes ripples {
   0% { opacity: 0; }
