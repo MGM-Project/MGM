@@ -1,0 +1,57 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.sound-icon {
+  top: 20px;
+  right: -20px;
+  position: relative;
+}
+.sound-icon-speaker {
+  display: flex;
+  align-items: center;
+}
+.sound-icon-speaker-box {
+  width: 20px;
+  height: 16px;
+  background: #37474F;
+  border-radius: 2px;
+}
+.sound-icon-speaker-cone {
+    border-bottom: 15px solid #37474F;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    height: 0;
+    width: 5px;
+    border-radius: 4px;
+    transform: rotate(270deg) translate(0px, -25px);
+  
+}
+.sound-icon-speaker-cover {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 38px;
+  padding: 0 5px;
+  transform: translate(-35px, 0);
+}
+.sound-icon-speaker-cover-bar {
+  width: 4px;
+  height: 50%;
+  margin: 0 3px;
+  background: #37474F;
+  border-radius: 2px;
+  transition: all 400ms cubic-bezier(0.44, 0.09, 0.21, 1.27) 100ms;
+}
+.sound-icon-speaker-cover-bar:nth-child(2) {
+  height: 70%;
+}
+.silent .sound-icon-speaker-cover-bar {
+  height: 60%;
+  margin: 0;
+  transform: rotate(45deg);
+  background: red;
+}
+.silent .sound-icon-speaker-cover-bar:nth-child(1) {
+  transform: rotate(-45deg) translate(3px, 3px);
+}

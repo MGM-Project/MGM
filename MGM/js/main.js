@@ -1,5 +1,23 @@
 ﻿$(() => {
   // MODAL LOGIN START
+  // Audio
+  $('.sound-icon-speaker-cover').toggleClass('silent');
+  const audio = document.getElementById('audio');
+  audio.addEventListener('canplaythrough', function () {
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    if (!isChrome) {
+      this.currentTime = 2;
+    }
+    this.play();
+  });
+  $('.wrapper').on('click', () => {
+    $('.sound-icon-speaker-cover').toggleClass('silent');
+    if (audio.muted) {
+      audio.muted = false;
+    } else {
+      audio.muted = true;
+    }
+  });
   // Show overlay & Open modal
   $('.login-modal-overlay').fadeIn(200);
   $('.nameButton').click(() => {

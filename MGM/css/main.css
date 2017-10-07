@@ -16,6 +16,22 @@ header{
   height: 50px;
 }
 
+audio { 
+  display:none;
+}
+
+.rulesLink:link {
+	color: plum;
+}
+.rulesLink:visited {
+	color: lightpink;
+}
+.rulesLink:hover {
+	color: hotpink;
+}
+.rulesLink:active {
+	color: purple;
+}
 
 /*username&score*/
 
@@ -24,9 +40,13 @@ header{
   margin-right:25px;
 }
 
+/* #rules {
+  height: 80%;
+} */
+
 main {
     background-image: url("../../Assets/Images/background.jpg");
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     flex: 1;
 }
@@ -67,13 +87,13 @@ header > img {
 
 /* Modal overlay */
 
-.login-modal-overlay {
+/* .login-modal-overlay {
   position: fixed;
   width: 100%;
   height: 100%;
   background: rgba(185, 110, 110, 0.5);
   display: none;
-}
+} */
 
 
 /* modal */
@@ -125,7 +145,7 @@ header > img {
   margin-bottom: 35px; 
 }
 .transparent-container{
-  background-color:rgba(255, 255, 255, 0.2);
+  /* background-color:rgba(255, 255, 255, 0.2); */
   display: none;
 }
 
@@ -298,3 +318,79 @@ header > img {
 }
 
 .buttonBlue:hover { background: #0092D0; }
+
+.help-tip{
+  position: absolute;
+  top: 77px;
+  right: 97%;
+  text-align: center;
+  background-color: #37474F;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 40px;
+  cursor: default;
+}
+.help-tip:before{
+  content:'?';
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;  
+  font-weight: bold;
+  color:#fff;
+}
+.help-tip:hover p{
+  display:block;
+  transform-origin: 100% 0%;
+
+  -webkit-animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.help-tip p{
+  display: none;
+  text-align: left;
+  background-color: #1E2021;
+  padding: 20px;
+  width: 300px;
+  position: absolute;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  left: -4px;
+  color: #FFF;
+  font-size: 11px;
+	line-height: 1.4;
+	white-space: pre;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.help-tip p:before{
+  position: absolute;
+  content: '';
+  width:0;
+  height: 0;
+  border:6px solid transparent;
+  border-bottom-color:#1E2021;
+  left:18px;
+  top:-12px;
+}
+.help-tip p:after{
+  width:100%;
+  height:40px;
+  content:'';
+  position: absolute;
+  top:-40px;
+  left:0;
+}
+@-webkit-keyframes fadeIn {
+  0% { 
+      opacity:0; 
+      transform: scale(0.6);
+  }
+
+  100% {
+      opacity:100%;
+      transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:100%; }
+}

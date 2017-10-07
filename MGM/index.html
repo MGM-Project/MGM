@@ -1,91 +1,112 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/sound.css" rel="stylesheet" />
     <link href="css/gameWindowMock.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet" />
     <title>MGM-Project</title>
 </head>
+
 <body>
     <header>
-        <img id="logo" src="../Assets/Logo/logo.gif"/>
+        <img id="logo" src="../Assets/Logo/logo.gif" />
         <div id="userInfo">
             <div id="userName">Username:</div>
             <div id="depositSum">Deposit:</div>
         </div>
     </header>
-<main>
-    <div id="login">
-        <div class="login-modal-overlay">
-            <div class="login-modal">
-                <!-- <h1>Enter</h1> -->
-                <h2>Please enter your name below.</h2>
-                <div class="group">
-                  <input id="playerName" type="text" autofocus="autofocus" required><span class="bar"></span>
-                  <label>Player name</label>
-                </div>
-                <button class="button buttonBlue nameButton">Enter</button>
-            </div>
+    <main>
+        <audio id="audio" autoplay="true" loop="true" src="../Assets/Music/music.mp3" controls>
+            <p>If you are reading this, it is because your browser does not support the audio element.</p>
+        </audio>
+        <div class="help-tip">
+            <p>Blackjack rules:<br/>   <a class="rulesLink" target="_blank" id="rulesLink" href="http://www.bicyclecards.com/how-to-play/blackjack/">http://www.bicyclecards.com/how-to-play/blackjack/</a></p>
         </div>
-    </div>
-    <div id="modalHelpWindow">
+        <div class="wrapper">
+            <div class="sound-icon">
+                <div class="sound-icon-speaker">
+                    <div class="sound-icon-speaker-box"></div>
+                    <div class="sound-icon-speaker-cone"></div>
 
-    </div>
-    <div id="depositWindow">
-        <div class="login-modal transparent-container">
-            <!-- <h1>Enter</h1> -->
-            <h2>Choose sum to deposit in $</h2>
-            <div class="group">
-                <div class="dropdown">
-                    <button class="dropbtn">Select sum</button>
-                    <div class="dropdown-content">
-                      <a href="#">$5</a>
-                      <a href="#">$10</a>
-                      <a href="#">$20</a>
-                      <a href="#">$50</a>
-                      <a href="#">$100</a>
+                    <div class=" silent sound-icon-speaker-cover">
+                        <div class="sound-icon-speaker-cover-bar"></div>
+                        <div class="sound-icon-speaker-cover-bar"></div>
                     </div>
-                  </div>
+                </div>
             </div>
-            <button class="button buttonBlue depositButton">Deposit</button>
         </div>
-    </div>
-    <!-- <div id="gameWindow">
-        
-    </div> -->
-    <!-- TESTING PURPOSES -->
-    <div id="gameWindowMock" hidden="true">
-        <div class="sequenceOfCards" id="dealerCards">
-           <div class="dCards"></div>     
-           <div class="dCards"></div> 
-           <div class="dCards"></div> 
-           <div class="dCards"></div> 
-           <div class="dCards"></div> 
-           <div class="dCards"></div> 
-           <div class="dCards"></div> 
+        <!-- <div align="center" id="rules"><iframe src="http://www.bicyclecards.com/how-to-play/blackjack/" width="80%" height="100%" hidden="true" ></iframe></div> -->
+        <div id="login">
+            <div class="login-modal-overlay">
+                <div class="login-modal">
+                    <h2>Please enter your name below.</h2>
+                    <div class="group">
+                        <input id="playerName" type="text" autofocus="autofocus" required>
+                        <span class="bar"></span>
+                        <label>Player name</label>
+                    </div>
+                    <button class="button buttonBlue nameButton">Enter</button>
+                </div>
+            </div>
         </div>
-        <div class="score" id="dealerScore">
+        <div id="modalHelpWindow">
 
         </div>
-        <div class="score" id="playerScore">
-                
+        <div id="depositWindow">
+            <div class="login-modal transparent-container">
+                <h2>Choose sum to deposit in $</h2>
+                <div class="group">
+                    <div class="dropdown">
+                        <button class="dropbtn">Select sum</button>
+                        <div class="dropdown-content">
+                            <a href="#">$5</a>
+                            <a href="#">$10</a>
+                            <a href="#">$20</a>
+                            <a href="#">$50</a>
+                            <a href="#">$100</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="button buttonBlue depositButton">Deposit</button>
+            </div>
         </div>
-        <div class="sequenceOfCards" id="playerCards">
-                <div class="pCards"></div>     
-                <div class="pCards"></div> 
-                <div class="pCards"></div> 
-                <div class="pCards"></div> 
-                <div class="pCards"></div> 
-                <div class="pCards"></div> 
-                <div class="pCards"></div> 
+        <div class="gameWindow">
         </div>
-    </div>
-    <!-- END TESTING -->
-</main>
-<footer>
-    <div id="copyrightText">&#169; MGM 2017</div>
-</footer>
+        <!-- TESTING PURPOSES -->
+        <div id="gameWindowMock" hidden="true">
+            <div class="sequenceOfCards" id="dealerCards">
+                <div class="dCards"></div>
+                <div class="dCards"></div>
+                <div class="dCards"></div>
+                <div class="dCards"></div>
+                <div class="dCards"></div>
+                <div class="dCards"></div>
+                <div class="dCards"></div>
+            </div>
+            <div class="score" id="dealerScore">
+
+            </div>
+            <div class="score" id="playerScore">
+
+            </div>
+            <div class="sequenceOfCards" id="playerCards">
+                <div class="pCards"></div>
+                <div class="pCards"></div>
+                <div class="pCards"></div>
+                <div class="pCards"></div>
+                <div class="pCards"></div>
+                <div class="pCards"></div>
+                <div class="pCards"></div>
+            </div>
+        </div>
+        <!-- END TESTING -->
+    </main>
+    <footer>
+        <div id="copyrightText">&#169; MGM 2017</div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/uiHandler.js"></script>
     <script src="js/gameLogic.js"></script>
@@ -93,4 +114,5 @@
     <script src="js/container.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
