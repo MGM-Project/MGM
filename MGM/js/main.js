@@ -10,10 +10,31 @@
   $('a').click(function () {
     $('.dropbtn').text($(this).html());
   });
+  $('#playerName').keyup((event) => {
+    if (event.keyCode === 13) {
+      $('.nameButton').click();
+    }
+  });
   // Attach event on .depositButton
   $('.depositButton').click(() => {
-    $('#depositSum').append(`${$('.dropbtn').text()}`);
-    $('.transparent-container').hide();
+    if (`${$('.dropbtn').text()}` !== 'Select sum') {
+      $('#depositSum').append(`${$('.dropbtn').text()}`);
+      $('.transparent-container').hide();
+    }
+  });
+  $('.dropdown-content').click(() => {
+    if ($('.dropdown-content').is(':hidden')) {
+      $('.dropdown-content').show();
+    } else {
+      $('.dropdown-content').hide();
+    }
+  });
+  $('.dropbtn').click(() => {
+    if ($('.dropdown-content').is(':hidden')) {
+      $('.dropdown-content').show();
+    } else {
+      $('.dropdown-content').hide();
+    }
   });
   // Stops event execution of children elements
   $('.login-modal').click((event) => {
