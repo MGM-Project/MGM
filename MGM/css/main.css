@@ -17,12 +17,12 @@ body {
   position: absolute;
 }
 
-#video_overlays {
+/* #video_overlays {
   position:absolute;
   float: center;
       width:100%;
       min-height:100%;
-}
+} */
 
 header{
   align-content:flex-start;
