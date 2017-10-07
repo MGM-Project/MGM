@@ -15,29 +15,13 @@
         <img id="logo" src="../Assets/Logo/logo.gif" />
         <div id="userInfo">
             <div id="userName">Username:</div>
-            <div id="depositSum">Deposit:</div>
+            <div id="depositSum">Balance:</div>
         </div>
     </header>
     <main>
         <audio id="audio" autoplay="true" loop="true" src="../Assets/Music/music.mp3" controls>
             <p>If you are reading this, it is because your browser does not support the audio element.</p>
         </audio>
-        <div class="help-tip">
-            <p>Blackjack rules:<br/>   <a class="rulesLink" target="_blank" id="rulesLink" href="http://www.bicyclecards.com/how-to-play/blackjack/">http://www.bicyclecards.com/how-to-play/blackjack/</a></p>
-        </div>
-        <div class="wrapper">
-            <div class="sound-icon">
-                <div class="sound-icon-speaker">
-                    <div class="sound-icon-speaker-box"></div>
-                    <div class="sound-icon-speaker-cone"></div>
-
-                    <div class=" silent sound-icon-speaker-cover">
-                        <div class="sound-icon-speaker-cover-bar"></div>
-                        <div class="sound-icon-speaker-cover-bar"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- <div align="center" id="rules"><iframe src="http://www.bicyclecards.com/how-to-play/blackjack/" width="80%" height="100%" hidden="true" ></iframe></div> -->
         <div id="login">
             <div class="login-modal-overlay">
@@ -62,11 +46,11 @@
                     <div class="dropdown">
                         <button class="dropbtn">Select sum</button>
                         <div class="dropdown-content">
-                            <a href="#">$5</a>
-                            <a href="#">$10</a>
-                            <a href="#">$20</a>
-                            <a href="#">$50</a>
-                            <a href="#">$100</a>
+                            <a class="depositValue" href="#">$5</a>
+                            <a class="depositValue" href="#">$10</a>
+                            <a class="depositValue" href="#">$20</a>
+                            <a class="depositValue" href="#">$50</a>
+                            <a class="depositValue" href="#">$100</a>
                         </div>
                     </div>
                 </div>
@@ -74,6 +58,64 @@
             </div>
         </div>
         <div class="gameWindow">
+            <div id="video_overlays">
+                <video eight="100%" width="100%" id="vid" hidden="true">
+                    <source id="mp4" type="video/mp4" />
+                </video>
+            </div>
+            <!-- <div id="video_overlays">
+                <video src="../Assets/Videos/0_greet.mp4" height="100%" width="100%" hidden="true" class="greet" />
+            </div>
+            <img src="../Assets/Videos/1_idle_emptyBoard.gif" height="100%" width="100%" hidden="true" class="idleEmptyBoard">
+            <div id="video_overlays">
+                <video src="../Assets/Videos/2_fullDeal.mp4" height="100%" width="100%" hidden="true" class="fullDeal" />
+            </div>
+            <div id="video_overlays">
+                <video src="../Assets/Videos/3_deal1To_Player.mp4" height="100%" width="100%" hidden="true" class="deal1ToPlayer"
+                />
+            </div>
+            <div id="video_overlays">
+                <video src="../Assets/Videos/4_split_dealL.mp4" height="100%" width="100%" hidden="true" class="spltDealL" />
+            </div>
+            <div id="video_overlays">
+                <video src="../Assets/Videos/4_split_dealR.mp4" height="100%" width="100%" hidden="true" class="splitDealR" />
+            </div>
+            <div id="video_overlays">
+                <video src="../Assets/Videos/4_split.mp4" height="100%" width="100%" hidden="true" class="split" />
+            </div>
+            <div id="video_overlays">
+                <video src="../Assets/Videos/5_deal1To_Self.mp4" height="100%" width="100%" hidden="true" class="deal1ToSelf"
+                />
+            </div>
+            <div id="video_overlays">
+                <video src="../Assets/Videos/6_player_won.mp4" height="100%" width="100%" hidden="true" class="playerWon" />
+            </div>
+            <div id="video_overlays">
+                <video src="../Assets/Videos/7_player_lost.mp4" height="100%" width="100%" hidden="true" class="playerLost" />
+            </div>
+            <img src="../Assets/Videos/8_idle_fullBoard.gif" height="100%" width="100%" hidden="true" class="idleFullBoard">
+            <div id="video_overlays">
+                <video src="../Assets/Videos/9_thanks.mp4" height="100%" width="100%" hidden="true" class="thanks" />
+            </div> -->
+        </div>
+        <div class="help-tip">
+            <p>Blackjack rules:
+                <br/>
+                <a class="rulesLink" target="_blank" id="rulesLink" href="http://www.bicyclecards.com/how-to-play/blackjack/">http://www.bicyclecards.com/how-to-play/blackjack/</a>
+            </p>
+        </div>
+        <div class="wrapper">
+            <div class="sound-icon">
+                <div class="sound-icon-speaker">
+                    <div class="sound-icon-speaker-box"></div>
+                    <div class="sound-icon-speaker-cone"></div>
+
+                    <div class=" silent sound-icon-speaker-cover">
+                        <div class="sound-icon-speaker-cover-bar"></div>
+                        <div class="sound-icon-speaker-cover-bar"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- TESTING PURPOSES -->
         <div id="gameWindowMock" hidden="true">

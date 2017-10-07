@@ -2,13 +2,14 @@
   // MODAL LOGIN START
   // Audio
   $('.sound-icon-speaker-cover').toggleClass('silent');
-  const audio = document.getElementById('audio');
+  const audio = $('#audio')[0];
   audio.addEventListener('canplaythrough', function () {
-    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    const isChrome = !!window.chrome && !!window.chrome.webstore;
     if (!isChrome) {
       this.currentTime = 2;
     }
     this.play();
+    // loadVideo('0_greet.mp4');
   });
   $('.wrapper').on('click', () => {
     $('.sound-icon-speaker-cover').toggleClass('silent');
@@ -25,7 +26,7 @@
     $('#userName').append(` ${$('#playerName').val()}`);
     $('.transparent-container').show();
   });
-  $('a').click(function () {
+  $('.depositValue').click(function () {
     $('.dropbtn').text($(this).html());
   });
   $('#playerName').keyup((event) => {
@@ -38,6 +39,7 @@
     if (`${$('.dropbtn').text()}` !== 'Select sum') {
       $('#depositSum').append(`${$('.dropbtn').text()}`);
       $('.transparent-container').hide();
+      $('.idleEmptyBoard').show();
     }
   });
   $('.dropdown-content').click(() => {
@@ -65,12 +67,20 @@
   });
   // MODAL LOGIN END
 
-
   // TESTING PURPOSES START
-  const container = containerFunc();
-  let deck_id;
-  container.asyncOps.newShuffledDeck(5).then(deck => deck.deck_id)
-    .then(deck => container.asyncOps.drawCard(deck))
-    .then(picUrl => $('#logo').attr('src', picUrl.cards[0].image));
+  // const container = containerFunc();
+  // let deck_id;
+  // container.asyncOps.newShuffledDeck(5).then(deck => deck.deck_id)
+  //   .then(deck => container.asyncOps.drawCard(deck))
+  //   .then(picUrl => $('#logo').attr('src', picUrl.cards[0].image));
   // TESTING PURPOSES END
 });
+
+function loadVideo(id) {
+  const video = $('#vid')[0];
+  const mp4 = $('#mp4')[0];
+  mp4.src = `../Assets/Videos/${id}`;
+  $('#vid').show();
+  video.load();
+  video.play();
+}
