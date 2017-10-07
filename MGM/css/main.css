@@ -90,6 +90,7 @@ header > img {
   left: 0;
   margin: auto;
   -webkit-box-shadow: 0 -2px 25px 0 rgba(0, 0, 0, 0.15), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+  box-shadow:         0 -2px 25px 0 rgba(0, 0, 0, 0.15), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   padding: 30px;
 }
