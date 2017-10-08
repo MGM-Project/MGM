@@ -90,7 +90,7 @@ $('.tipdealer').click(() => {
 
 $('.enterBet').click(() => {
   if ($('.betAmount').val() <= +$('#depositSum').text().substr(10) && $('.betAmount').val() > 0) {
-    $('#currentBet').append(`\$${$('.betAmount').val()}`);
+    $('#currentBet').append(`$${$('.betAmount').val()}`);
     const moneyLeft = +$('#depositSum').text().substr(10) - $('.betAmount').val();
     $('#depositSum').text(`Balance: $${moneyLeft}`);
     $('#betting').hide();
@@ -103,7 +103,7 @@ $('.enterBet').click(() => {
     const drawnCards = [];
     const drawnCardsValues = [];
     asyncCardOps.drawCard(deckID, 3).then((picUrl) => {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 3; i += 1) { // eslint seems to hate unary operators
         drawnCards.push(picUrl.cards[i].image);
         drawnCardsValues.push(picUrl.cards[i].value);
       }
@@ -111,16 +111,20 @@ $('.enterBet').click(() => {
     });
     $('#vid').on('ended', () => {
       $('.allDealerCards2').attr('src', '../Assets/Images/cardback.gif');
-      $('.allDealerCards1').attr('src', drawnCards[0]);
+      numDealerCards += 1;
+      $(`.allDealerCards${numDealerCards}`).attr('src', drawnCards[0]);
       dealerScore += cardValues[drawnCardsValues[0]];
-      $('.allPlayerCards1').attr('src', drawnCards[1]);
+
+      numPlayerCards += 1;
+      $(`.allPlayerCards${numPlayerCards}`).attr('src', drawnCards[1]);
       playerScore += cardValues[drawnCardsValues[1]];
-      $('.allPlayerCards2').attr('src', drawnCards[2]);
+
+      numPlayerCards += 1;
+      $(`.allPlayerCards${numPlayerCards}`).attr('src', drawnCards[2]);
       playerScore += cardValues[drawnCardsValues[2]];
+
       $('#ds').text(dealerScore);
       $('#ps').text(playerScore);
-      numPlayerCards += 2;
-      numDealerCards += 1;
       $('#idleFullBoard').show();
       $('#buttons').show();
       setTimeout(() => { $('#vid').hide(); }, 50);

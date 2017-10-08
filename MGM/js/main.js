@@ -1,9 +1,17 @@
-﻿$(() => {
+﻿function loadVideo(id) {
+  const video = $('#vid').get(0);
+  video.setAttribute('src', `../Assets/Videos/${id}`);
+  $('#vid').show();
+  video.load();
+  video.play();
+}
+
+$(() => {
   // MODAL LOGIN START
   // Audio
   $('.sound-icon-speaker-cover').toggleClass('silent');
   const audio = $('#audio').get(0);
-  audio.addEventListener('canplaythrough', function () {
+  audio.addEventListener('canplaythrough', function eslintStopCryingLikeALittleBitch() {
     const isChrome = !!window.chrome && !!window.chrome.webstore;
     if (!isChrome) {
       this.currentTime = 2;
@@ -26,7 +34,7 @@
     $('#userName').append(`${$('#playerName').val()}`);
     $('.transparent-container').show();
   });
-  $('.depositValue').click(function () {
+  $('.depositValue').click(function eslintStopCryingLikeALittleBitch() {
     $('.dropbtn').text($(this).html());
   });
   $('#playerName').keyup((event) => {
@@ -69,7 +77,7 @@
     event.stopPropagation();
   });
   // Input label
-  $('input').blur(function () {
+  $('input').blur(function eslintStopCryingLikeALittleBitch() {
     const $this = $(this);
     if ($this.val()) { $this.addClass('used'); } else { $this.removeClass('used'); }
   });
@@ -83,11 +91,3 @@
   //   .then(picUrl => $('#logo').attr('src', picUrl.cards.get(0).image));
   // TESTING PURPOSES END
 });
-
-function loadVideo(id) {
-  const video = $('#vid').get(0);
-  video.setAttribute('src', `../Assets/Videos/${id}`);
-  $('#vid').show();
-  video.load();
-  video.play();
-}
