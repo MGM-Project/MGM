@@ -89,7 +89,7 @@ $('.tipdealer').click(() => {
 });
 
 $('.enterBet').click(() => {
-  if ($('.betAmount').val() <= +$('#depositSum').text().substr(10)) {
+  if ($('.betAmount').val() <= +$('#depositSum').text().substr(10) && $('.betAmount').val() > 0) {
     $('#currentBet').append(`\$${$('.betAmount').val()}`);
     const moneyLeft = +$('#depositSum').text().substr(10) - $('.betAmount').val();
     $('#depositSum').text(`Balance: $${moneyLeft}`);
@@ -110,7 +110,7 @@ $('.enterBet').click(() => {
       $('.gameInfo').show();
     });
     $('#vid').on('ended', () => {
-      $('.allDealerCards2').attr('src', 'http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg');
+      $('.allDealerCards2').attr('src', '../Assets/Images/cardback.gif');
       $('.allDealerCards1').attr('src', drawnCards[0]);
       dealerScore += cardValues[drawnCardsValues[0]];
       $('.allPlayerCards1').attr('src', drawnCards[1]);
