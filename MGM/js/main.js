@@ -1,10 +1,4 @@
-﻿function loadVideo(id) {
-  const video = $('#vid').get(0);
-  video.setAttribute('src', `../Assets/Videos/${id}`);
-  $('#vid').show();
-  video.load();
-  video.play();
-}
+﻿
 
 $(() => {
   // MODAL LOGIN START
@@ -27,61 +21,8 @@ $(() => {
       audio.muted = true;
     }
   });
-  // Show overlay & Open modal
-  $('.login-modal-overlay').fadeIn(200);
-  $('.nameButton').click(() => {
-    $('.login-modal-overlay').fadeOut(200);
-    $('#userName').append(`${$('#playerName').val()}`);
-    $('.transparent-container').show();
-  });
-  $('.depositValue').click(function eslintStopCryingLikeALittleBitch() {
-    $('.dropbtn').text($(this).html());
-  });
-  $('#playerName').keyup((event) => {
-    if (event.keyCode === 13) {
-      $('.nameButton').click();
-    }
-  });
-  // Attach event on .depositButton
-  $('.depositButton').click(() => {
-    if (`${$('.dropbtn').text()}` !== 'Select sum') {
-      $('#depositSum').append(`${$('.dropbtn').text()}`);
-      $('.transparent-container').hide();
-      $('.gameWindow').show();
-      loadVideo('0_greet.mp4');
-      $('#audio').prop('volume', 0.1);
-      responsiveVoice.speak(`Hello ${$('#userName').text().substr(10)}.`);
-      setTimeout(() => $('#audio').prop('volume', 1), 2000);
-      $('#vid').on('ended', () => {
-        $('#idleEmptyBoard').show();
-        setTimeout(() => { $('#vid').hide(); }, 50);
-        $('#vid').off('ended');
-      });
-    }
-  });
-  $('.dropdown-content').click(() => {
-    if ($('.dropdown-content').is(':hidden')) {
-      $('.dropdown-content').show();
-    } else {
-      $('.dropdown-content').hide();
-    }
-  });
-  $('.dropbtn').click(() => {
-    if ($('.dropdown-content').is(':hidden')) {
-      $('.dropdown-content').show();
-    } else {
-      $('.dropdown-content').hide();
-    }
-  });
-  // Stops event execution of children elements
-  $('.login-modal').click((event) => {
-    event.stopPropagation();
-  });
-  // Input label
-  $('input').blur(function eslintStopCryingLikeALittleBitch() {
-    const $this = $(this);
-    if ($this.val()) { $this.addClass('used'); } else { $this.removeClass('used'); }
-  });
+  const container = containerFunc();
+  container.uiHandler.login().render;
   // MODAL LOGIN END
 
   // TESTING PURPOSES START
