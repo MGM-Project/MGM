@@ -77,6 +77,9 @@ $('.tipdealer').click(() => {
     $('.idleFullBoard').hide();
     $('#buttons').hide();
     loadVideo('9_thanks.mp4');
+    $('#audio').prop('volume', 0.1);
+    responsiveVoice.speak(`Thanks a lot, ${$('#userName').text().substr(10)}!`);
+    setTimeout(() => $('#audio').prop('volume', 1), 2000);
     $('#vid').on('ended', () => {
       $('#idleFullBoard').show();
       $('#buttons').show();
@@ -94,6 +97,9 @@ $('.enterBet').click(() => {
     $('.idleEmptyBoard').hide();
     $('.idleFullBoard').hide();
     loadVideo('2_fullDeal.mp4');
+    $('#audio').prop('volume', 0.1);
+    responsiveVoice.speak(`Good luck, ${$('#userName').text().substr(10)}!`);
+    setTimeout(() => $('#audio').prop('volume', 1), 2000);
     const drawnCards = [];
     const drawnCardsValues = [];
     asyncCardOps.drawCard(deckID, 3).then((picUrl) => {

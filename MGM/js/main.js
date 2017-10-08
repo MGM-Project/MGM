@@ -41,6 +41,9 @@
       $('.transparent-container').hide();
       $('.gameWindow').show();
       loadVideo('0_greet.mp4');
+      $('#audio').prop('volume', 0.1);
+      responsiveVoice.speak(`Hello ${$('#userName').text().substr(10)}.`);
+      setTimeout(() => $('#audio').prop('volume', 1), 2000);
       $('#vid').on('ended', () => {
         $('#idleEmptyBoard').show();
         setTimeout(() => { $('#vid').hide(); }, 50);
