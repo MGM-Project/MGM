@@ -55,6 +55,7 @@ $(() => {
       $('#vid').on('ended', () => {
         $('#idleEmptyBoard').show();
         setTimeout(() => { $('#vid').hide(); }, 50);
+        $('#vid').off('ended');
       });
     }
   });

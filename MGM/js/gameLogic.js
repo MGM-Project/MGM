@@ -1,10 +1,10 @@
 const asyncCardOps = asyncCardOpsFunc();
 let deckID;
 asyncCardOps.newShuffledDeck(6).then((deck) => { deckID = deck.deck_id; });
-let numPlayerCards = 0;
 let numDealerCards = 0;
-let playerScore = 0;
+let numPlayerCards = 0;
 let dealerScore = 0;
+let playerScore = 0;
 const cardValues = {
   2: 2,
   3: 3,
@@ -30,6 +30,7 @@ $('.hit').click(() => {
     $('#idleFullBoard').show();
     $('#buttons').show();
     setTimeout(() => { $('#vid').hide(); }, 50);
+    $('#vid').off('ended');
   });
 });
 
@@ -39,9 +40,34 @@ $('.stand').click(() => {
   $('#buttons').hide();
   loadVideo('5_deal1To_Self.mp4');
   $('#vid').on('ended', () => {
-    $('#idleFullBoard').show();
-    $('#buttons').show();
-    setTimeout(() => { $('#vid').hide(); }, 50);
+    // $('#idleFullBoard').show();
+    // $('#buttons').show();
+    // setTimeout(() => { $('#vid').hide(); }, 50);
+    loadVideo('6_player_won.mp4');
+    $('#vid').off('ended');
+    $('#vid').on('ended', () => {
+      $('#idleEmptyBoard').show();
+      // $('#buttons').show();
+      $('#betting').show();
+      $('.gameInfo').hide();
+      numDealerCards = 0;
+      numPlayerCards = 0;
+      dealerScore = 0;
+      playerScore = 0;
+      $('#ds').text(dealerScore);
+      $('#ps').text(playerScore);
+      const betSize = +$('#currentBet').text().substr(14);
+      const curBalance = +$('#depositSum').text().substr(10);
+      const curBalancePlusWonMoney = curBalance + (2 * betSize);
+      $('#depositSum').text(`Balance: $${curBalancePlusWonMoney}`);
+      $('#currentBet').text('Current bet: ');
+      for (let i = 0; i < 7; i += 1) {
+        $(`.allDealerCards${i}`).attr('src', '');
+        $(`.allPlayerCards${i}`).attr('src', '');
+      }
+      setTimeout(() => { $('#vid').hide(); }, 50);
+      $('#vid').off('ended');
+    });
   });
 });
 
@@ -54,6 +80,7 @@ $('.split').click(() => {
     $('#idleFullBoard').show();
     $('#buttons').show();
     setTimeout(() => { $('#vid').hide(); }, 50);
+    $('#vid').off('ended');
   });
 });
 
@@ -66,6 +93,7 @@ $('.doubledown').click(() => {
     $('#idleFullBoard').show();
     $('#buttons').show();
     setTimeout(() => { $('#vid').hide(); }, 50);
+    $('#vid').off('ended');
   });
 });
 
@@ -84,7 +112,14 @@ $('.tipdealer').click(() => {
       $('#idleFullBoard').show();
       $('#buttons').show();
       setTimeout(() => { $('#vid').hide(); }, 50);
+      $('#vid').off('ended');
     });
+  }
+});
+
+$('.betAmount').keyup((event) => {
+  if (event.keyCode === 13) {
+    $('.enterBet').click();
   }
 });
 
@@ -128,6 +163,7 @@ $('.enterBet').click(() => {
       $('#idleFullBoard').show();
       $('#buttons').show();
       setTimeout(() => { $('#vid').hide(); }, 50);
+      $('#vid').off('ended');
     });
   }
 });
