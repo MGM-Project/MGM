@@ -69,15 +69,33 @@ $('.doubledown').click(() => {
   });
 });
 
+$('.tipdealer').click(() => {
+  if ($('#depositSum').text().substr(10) >= 5) {
+    const moneyLeft = +$('#depositSum').text().substr(10) - 5;
+    $('#depositSum').text(`Balance: $${moneyLeft}`);
+    $('.idleEmptyBoard').hide();
+    $('.idleFullBoard').hide();
+    $('#buttons').hide();
+    loadVideo('9_thanks.mp4');
+    $('#vid').on('ended', () => {
+      $('#idleFullBoard').show();
+      $('#buttons').show();
+      setTimeout(() => { $('#vid').hide(); }, 50);
+    });
+  }
+});
+
 $('.enterBet').click(() => {
   if ($('.betAmount').val() <= +$('#depositSum').text().substr(10)) {
     $('#currentBet').append(`\$${$('.betAmount').val()}`);
+    const moneyLeft = +$('#depositSum').text().substr(10) - $('.betAmount').val();
+    $('#depositSum').text(`Balance: $${moneyLeft}`);
     $('#betting').hide();
     $('.idleEmptyBoard').hide();
     $('.idleFullBoard').hide();
     loadVideo('2_fullDeal.mp4');
-    let drawnCards = [];
-    let drawnCardsValues = [];
+    const drawnCards = [];
+    const drawnCardsValues = [];
     asyncCardOps.drawCard(deckID, 3).then((picUrl) => {
       for (let i = 0; i < 3; i++) {
         drawnCards.push(picUrl.cards[i].image);

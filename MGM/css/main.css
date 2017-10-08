@@ -550,6 +550,14 @@ header > img {
   left: 20%;
 }
 
+.tipdealer {
+  position: absolute;
+  height: 6%;
+  width: 4%;
+  top: 90%;
+  left: 26%;
+}
+
 .help-tip{
   position: absolute;
   top: 77px;
