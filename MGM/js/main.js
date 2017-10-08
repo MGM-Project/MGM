@@ -2,7 +2,7 @@
   // MODAL LOGIN START
   // Audio
   $('.sound-icon-speaker-cover').toggleClass('silent');
-  const audio = $('#audio')[0];
+  const audio = $('#audio').get(0);
   audio.addEventListener('canplaythrough', function () {
     const isChrome = !!window.chrome && !!window.chrome.webstore;
     if (!isChrome) {
@@ -23,7 +23,7 @@
   $('.login-modal-overlay').fadeIn(200);
   $('.nameButton').click(() => {
     $('.login-modal-overlay').fadeOut(200);
-    $('#userName').append(` ${$('#playerName').val()}`);
+    $('#userName').append(`${$('#playerName').val()}`);
     $('.transparent-container').show();
   });
   $('.depositValue').click(function () {
@@ -39,7 +39,12 @@
     if (`${$('.dropbtn').text()}` !== 'Select sum') {
       $('#depositSum').append(`${$('.dropbtn').text()}`);
       $('.transparent-container').hide();
-      $('.idleEmptyBoard').show();
+      $('.gameWindow').show();
+      loadVideo('0_greet.mp4');
+      $('#vid').on('ended', () => {
+        $('#idleEmptyBoard').show();
+        setTimeout(() => { $('#vid').hide(); }, 50);
+      });
     }
   });
   $('.dropdown-content').click(() => {
@@ -72,14 +77,13 @@
   // let deck_id;
   // container.asyncOps.newShuffledDeck(5).then(deck => deck.deck_id)
   //   .then(deck => container.asyncOps.drawCard(deck))
-  //   .then(picUrl => $('#logo').attr('src', picUrl.cards[0].image));
+  //   .then(picUrl => $('#logo').attr('src', picUrl.cards.get(0).image));
   // TESTING PURPOSES END
 });
 
 function loadVideo(id) {
-  const video = $('#vid')[0];
-  const mp4 = $('#mp4')[0];
-  mp4.src = `../Assets/Videos/${id}`;
+  const video = $('#vid').get(0);
+  video.setAttribute('src', `../Assets/Videos/${id}`);
   $('#vid').show();
   video.load();
   video.play();

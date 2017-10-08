@@ -11,9 +11,11 @@ body {
   height: 100vh;
 }
 
-.idleEmptyBoard .idleFullBoard{
-  max-width: 100%;
-  max-height: 100%;
+.idleEmptyBoard{
+  position: absolute;
+}
+
+.idleFullBoard{
   position: absolute;
 }
 
@@ -57,9 +59,163 @@ video {
 
 /*username&score*/
 
-#userInfo{
+
+#userInfo {
   float:right;
   margin-right:25px;
+}
+
+#userName {
+  font-size: 0.6vw;
+}
+
+#depositSum {
+  font-size: 0.6vw;
+}
+
+#currentBet {
+  font-size: 0.6vw;
+}
+
+#playerScore {
+  position: absolute;
+  font-family: 'comic sans ms';
+  font-size: 30px;
+  top: 87%;
+  left: 68%;
+  width: 4%;
+  height: 4%;
+  color: #5500FF;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  
+}
+
+#dealerScore {
+  position: absolute;
+  font-family: 'comic sans ms';
+  font-size: 30px;
+  top: 72%;
+  left: 68%;
+  width: 4%;
+  height: 4%;
+  color: #5500FF;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+}
+
+.allPlayerCards1 {
+  position: absolute;
+  top: 85%;
+  left: 70%;
+  width: 4%;
+  height: 8%;
+}
+
+.allPlayerCards2 {
+  position: absolute;
+  top: 85%;
+  left: 74%;
+  width: 4%;
+  height: 8%;
+}
+
+.allPlayerCards3 {
+  position: absolute;
+  top: 85%;
+  left: 78%;
+  width: 4%;
+  height: 8%;
+}
+
+.allPlayerCards4 {
+  position: absolute;
+  top: 85%;
+  left: 82%;
+  width: 4%;
+  height: 8%;
+}
+
+.allPlayerCards5 {
+  position: absolute;
+  top: 85%;
+  left: 86%;
+  width: 4%;
+  height: 8%;
+}
+
+.allPlayerCards6 {
+  position: absolute;
+  top: 85%;
+  left: 90%;
+  width: 4%;
+  height: 8%;
+}
+
+.allPlayerCards7 {
+  position: absolute;
+  top: 85%;
+  left: 94%;
+  width: 4%;
+  height: 8%;
+}
+
+.allDealerCards1 {
+  position: absolute;
+  top: 70%;
+  left: 70%;
+  width: 4%;
+  height: 8%;
+}
+
+.allDealerCards2 {
+  position: absolute;
+  top: 70%;
+  left: 74%;
+  width: 4%;
+  height: 8%;
+}
+
+.allDealerCards3 {
+  position: absolute;
+  top: 70%;
+  left: 78%;
+  width: 4%;
+  height: 8%;
+}
+
+.allDealerCards4 {
+  position: absolute;
+  top: 70%;
+  left: 82%;
+  width: 4%;
+  height: 8%;
+}
+
+.allDealerCards5 {
+  position: absolute;
+  top: 70%;
+  left: 86%;
+  width: 4%;
+  height: 8%;
+}
+
+.allDealerCards6 {
+  position: absolute;
+  top: 70%;
+  left: 90%;
+  width: 4%;
+  height: 8%;
+}
+
+.allDealerCards7 {
+  position: absolute;
+  top: 70%;
+  left: 94%;
+  width: 4%;
+  height: 8%;
 }
 
 /* #rules {
@@ -340,6 +496,59 @@ header > img {
 }
 
 .buttonBlue:hover { background: #0092D0; }
+
+
+
+#betting {
+  position: absolute;
+  top: 80%;
+  left: 28%;
+}
+
+.betAmount {
+  font-size: 2vw;
+  height: 2vw;
+  width: 4.3vw;
+}
+
+.enterBet {
+  position: absolute;
+  margin-left: 1vw;
+  height: 2.2vw;
+  width: 4vw;
+}
+
+.hit {
+  position: absolute;
+  height: 4%;
+  width: 3%;
+  top: 90%;
+  left: 8%;
+}
+
+.stand {
+  position: absolute;
+  height: 4%;
+  width: 3%;
+  top: 90%;
+  left: 12%;
+}
+
+.split {
+  position: absolute;
+  height: 4%;
+  width: 3%;
+  top: 90%;
+  left: 16%;
+}
+
+.doubledown {
+  position: absolute;
+  height: 4%;
+  width: 3%;
+  top: 90%;
+  left: 20%;
+}
 
 .help-tip{
   position: absolute;
