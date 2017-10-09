@@ -66,15 +66,18 @@ video {
 }
 
 #userName {
-  font-size: 0.6vw;
+  /* font-size: 0.6vw; */
+  font-size: 1vw;
 }
 
 #depositSum {
-  font-size: 0.6vw;
+  /* font-size: 0.6vw; */
+  font-size: 1vw;
 }
 
 #currentBet {
-  font-size: 0.6vw;
+  /* font-size: 0.6vw; */
+  font-size: 1vw;
 }
 
 #playerScore {
@@ -515,30 +518,30 @@ header > img {
   font-size: 1vw;
   position: absolute;
   margin-left: 1vw;
-  height: 2.2vw;
+  height: 2.5vw;
   width: 4vw;
 }
 
 .hit {
   position: absolute;
   height: 4%;
-  width: 3%;
+  width: 5%;
   top: 90%;
-  left: 8%;
+  left: 4%;
 }
 
 .stand {
   position: absolute;
   height: 4%;
-  width: 3%;
+  width: 5%;
   top: 90%;
-  left: 12%;
+  left: 10%;
 }
 
 .split {
   position: absolute;
   height: 4%;
-  width: 3%;
+  width: 5%;
   top: 90%;
   left: 16%;
 }
@@ -546,23 +549,23 @@ header > img {
 .doubledown {
   position: absolute;
   height: 4%;
-  width: 3%;
+  width: 5%;
   top: 90%;
-  left: 20%;
+  left: 22%;
 }
 
 .tipdealer {
   position: absolute;
   height: 6%;
-  width: 4%;
+  width: 6%;
   top: 90%;
-  left: 26%;
+  left: 28%;
 }
 
 .help-tip{
   position: absolute;
   top: 77px;
-  right: 97%;
+  right: 95%;
   text-align: center;
   background-color: #37474F;
   border-radius: 50%;
