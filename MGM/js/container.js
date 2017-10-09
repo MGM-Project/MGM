@@ -1,4 +1,4 @@
-const containerFunc = function () {
+const containerFunc = function eslint1() {
   const asyncOps = asyncCardOpsFunc();
   const gameLogic = gameLogicFunc;
   const viewsList = viewsListFunc();
@@ -6,6 +6,6 @@ const containerFunc = function () {
 
   return {
     // to return as few things as possible that'd then'be called by the main.js
-    uiHandler
+    uiHandler,
   };
 };
