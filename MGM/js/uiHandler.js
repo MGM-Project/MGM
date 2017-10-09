@@ -1,12 +1,6 @@
-const uiHandlerFunc = function(gameLogics,asyncOps){
+const uiHandlerFunc = function(gameLogics,asyncOps,views){
     //TO MAKE ANOTHER FILE WITH IT
     //TO use asyncOps here
-    const views = {
-        login : "views/login.html",
-        deposit: "views/deposit.html",
-        gameWindow: "views/gameWindow.html"
-    }
-
 
     const login = function() {
         return{
