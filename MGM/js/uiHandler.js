@@ -1,12 +1,11 @@
 const uiHandlerFunc = function(gameLogics,asyncOps,views){
     //TO MAKE ANOTHER FILE WITH IT
-    //TO use asyncOps here
 
     const login = function() {
         return{
             get render(){
                 $.get(views.login,function(partialPage){
-                    $("main").html(partialPage);
+                    $("#centralContentWrapper").html(partialPage);
                     console.log("login done");
 
                     //ToComeFromEventModule
@@ -35,7 +34,7 @@ const uiHandlerFunc = function(gameLogics,asyncOps,views){
             return{
                 get render(){
                     $.get(views.deposit,function(partialPage){
-                        $("main").html(partialPage);
+                        $("#centralContentWrapper").html(partialPage);
                         console.log("deposit done");
     
                         //ToComeFromEventModule
@@ -79,7 +78,7 @@ const uiHandlerFunc = function(gameLogics,asyncOps,views){
         return{
             get render(){
                 $.get(views.gameWindow,function(partialPage){
-                    $("main").html(partialPage);
+                    $("#centralContentWrapper").html(partialPage);
                     console.log("gameWindowMock done");
 
                 }).then(() => gameLogics(asyncOps));
